@@ -5,10 +5,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{67FBB20A-F482-4F66-99AF-45566EE63797}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{7FC3C038-CF63-44BF-ACD6-E15D054D6A2C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{1B312620-CE8C-4725-8E69-AEC884BA29E6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{6F2FF90F-4773-4BD9-B3EA-8A9A83BB6473}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+	.gitignore = .gitignore
+	Dockerfile = Dockerfile
+	docker-compose.yml = docker-compose.yml
+EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchandiseService", "src\MerchandiseService\MerchandiseService.csproj", "{3961FAED-4778-449D-8B59-63B125ABEC82}"
 EndProject
