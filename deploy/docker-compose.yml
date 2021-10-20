@@ -1,7 +1,9 @@
 version: "3.8"
 services:
   merchandise-service:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     hostname: merchandise-service
     ports:
       - "8080:80"
@@ -16,28 +18,20 @@ services:
   stock-api:
     image: ghcr.io/ozon-edu-csharp-2021/stock-api:main
     hostname: stock-api
-    ports:
-      - "8081:80"
     container_name: stock-api
     
   emailing-service:
     image: ghcr.io/ozon-edu-csharp-2021/emailing-service:main
     hostname: emailing-service
-    ports:
-      - "8082:80"
     container_name: emailing-service
 
   employees-service:
     image: ghcr.io/ozon-edu-csharp-2021/employees-service:main
     hostname: employees-service
-    ports:
-      - "8083:80"
     container_name: employees-service
     
   supply-service:
     image: ghcr.io/ozon-edu-csharp-2021/supply-service:main
     hostname: supply-service
-    ports:
-      - "8084:80"
     container_name: supply-service
     
