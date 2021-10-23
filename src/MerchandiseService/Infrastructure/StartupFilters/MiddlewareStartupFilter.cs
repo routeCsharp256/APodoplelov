@@ -12,6 +12,9 @@ namespace MerchandiseService.Infrastructure.StartupFilters
             return app =>
             {
                 app.Map("/version", builder => builder.UseMiddleware<ServiceVersionMiddleware>());
+
+                app.Map("/ready", builder => builder.UseMiddleware<OkResponseMiddleware>());
+                app.Map("/live", builder => builder.UseMiddleware<OkResponseMiddleware>());
                
                 next(app);
             };
