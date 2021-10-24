@@ -16,6 +16,7 @@ namespace MerchandiseService.Infrastructure.StartupFilters
                 app.Map("/ready", builder => builder.UseMiddleware<OkResponseMiddleware>());
                 app.Map("/live", builder => builder.UseMiddleware<OkResponseMiddleware>());
 
+                // TODO exclude grpc requests
                 app.UseMiddleware<LogRequestMiddleware>();
                
                 next(app);

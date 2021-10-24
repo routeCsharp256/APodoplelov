@@ -5,36 +5,39 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 
-namespace MerchandiseService.Infrastructure.Middlewares {
-	public class LogRequestMiddleware {
-		private readonly RequestDelegate NextDelegate;
-		private readonly ILogger<LogRequestMiddleware> Logger;
+namespace MerchandiseService.Infrastructure.Middlewares
+{
+    public class LogRequestMiddleware
+    {
+        private readonly RequestDelegate NextDelegate;
+        private readonly ILogger<LogRequestMiddleware> Logger;
 
-		public LogRequestMiddleware(RequestDelegate next, ILogger<LogRequestMiddleware> logger) {
-			this.NextDelegate = next;
-			this.Logger = logger;
-		}
+        public LogRequestMiddleware(RequestDelegate next, ILogger<LogRequestMiddleware> logger)
+        {
+            this.NextDelegate = next;
+            this.Logger = logger;
+        }
 
-		public async Task InvokeAsync(HttpContext context) {
-			// TODO exclude grpc requests
-			this.LogRequest(context);
+        public async Task InvokeAsync(HttpContext context)
+        {
+            this.LogRequest(context);
 
-			await this.NextDelegate(context);
-		}
+            await this.NextDelegate(context).ConfigureAwait(false);
+        }
 
-		private const string LogTemplate = "{result}"; 
-		
-		private void LogRequest(HttpContext context)
-		{
-			var sb = new StringBuilder();
-			sb.Append($"Request path: {context.Request.Path.Value}{Environment.NewLine}{Environment.NewLine}");
+        private const string LogTemplate = "{result}";
 
-			foreach ((var key, StringValues value) in context.Request.Headers)
-			{
-				sb.Append($"{key}: {value}{Environment.NewLine}");
-			}
+        private void LogRequest(HttpContext context)
+        {
+            var sb = new StringBuilder();
+            sb.Append("Request path: ").Append(context.Request.Path.Value).Append(Environment.NewLine).Append(Environment.NewLine);
 
-			this.Logger.LogInformation(LogTemplate, sb.ToString().Trim());
-		}
-	}
+            foreach ((var key, StringValues value) in context.Request.Headers)
+            {
+                sb.Append(key).Append(": ").Append(value).Append(Environment.NewLine);
+            }
+
+            this.Logger.LogInformation(LogTemplate, sb.ToString().Trim());
+        }
+    }
 }
