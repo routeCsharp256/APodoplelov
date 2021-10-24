@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +28,8 @@ namespace MerchandiseService
                 {
                     endpoints.MapControllers();
 
-                    endpoints.Map("{any}", async context => await context.Response.WriteAsync("ok!"));
+                    endpoints.Map("{any}", async context =>
+                        await context.Response.WriteAsync("ok!").ConfigureAwait(false));
                 }
             );
         }

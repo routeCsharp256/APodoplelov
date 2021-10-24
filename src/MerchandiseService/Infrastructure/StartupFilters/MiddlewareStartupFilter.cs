@@ -18,7 +18,8 @@ namespace MerchandiseService.Infrastructure.StartupFilters
 
                 // TODO exclude grpc requests
                 app.UseMiddleware<LogRequestMiddleware>();
-               
+                app.UseMiddleware<LogResponseMiddleware>();
+
                 next(app);
             };
         }
