@@ -15,6 +15,8 @@ namespace MerchandiseService.Infrastructure.StartupFilters
 
                 app.Map("/ready", builder => builder.UseMiddleware<OkResponseMiddleware>());
                 app.Map("/live", builder => builder.UseMiddleware<OkResponseMiddleware>());
+
+                app.UseMiddleware<LogRequestMiddleware>();
                
                 next(app);
             };
