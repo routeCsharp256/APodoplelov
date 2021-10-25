@@ -1,22 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{844C5FFE-6F9E-4144-A4A9-70BEE6F0ECF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{67FBB20A-F482-4F66-99AF-45566EE63797}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{7FC3C038-CF63-44BF-ACD6-E15D054D6A2C}"
-ProjectSection(SolutionItems) = preProject
-	README.md = README.md
-	.gitignore = .gitignore
-	Dockerfile = Dockerfile
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchandiseService", "src\MerchandiseService\MerchandiseService.csproj", "{3961FAED-4778-449D-8B59-63B125ABEC82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService", "src\MerchandiseService\MerchandiseService.csproj", "{3961FAED-4778-449D-8B59-63B125ABEC82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{3F920D73-AAAB-4903-B978-510F47082568}"
-ProjectSection(SolutionItems) = preProject
-	deploy\docker-compose.yml = deploy\docker-compose.yml
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		deploy\docker-compose.yml = deploy\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.HttpClients", "src\MerchandiseService.HttpClient\MerchandiseService.HttpClients.csproj", "{201C1158-3D64-4BE3-B49D-E4F0DBE6EDBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.RestModels", "src\MerchandiseService.RestModels\MerchandiseService.RestModels.csproj", "{D1DBA830-00C8-446A-B60F-B8B1D7D0233D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,8 +35,24 @@ Global
 		{3961FAED-4778-449D-8B59-63B125ABEC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3961FAED-4778-449D-8B59-63B125ABEC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3961FAED-4778-449D-8B59-63B125ABEC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201C1158-3D64-4BE3-B49D-E4F0DBE6EDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201C1158-3D64-4BE3-B49D-E4F0DBE6EDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201C1158-3D64-4BE3-B49D-E4F0DBE6EDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201C1158-3D64-4BE3-B49D-E4F0DBE6EDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1DBA830-00C8-446A-B60F-B8B1D7D0233D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DBA830-00C8-446A-B60F-B8B1D7D0233D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DBA830-00C8-446A-B60F-B8B1D7D0233D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DBA830-00C8-446A-B60F-B8B1D7D0233D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3961FAED-4778-449D-8B59-63B125ABEC82} = {844C5FFE-6F9E-4144-A4A9-70BEE6F0ECF5}
+		{201C1158-3D64-4BE3-B49D-E4F0DBE6EDBB} = {844C5FFE-6F9E-4144-A4A9-70BEE6F0ECF5}
+		{D1DBA830-00C8-446A-B60F-B8B1D7D0233D} = {844C5FFE-6F9E-4144-A4A9-70BEE6F0ECF5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7CDCE62-651B-46F3-BF4C-DC89D1D3EBCE}
 	EndGlobalSection
 EndGlobal

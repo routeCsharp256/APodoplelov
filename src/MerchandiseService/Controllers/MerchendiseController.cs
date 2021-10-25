@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using MerchandiseService.RestModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MerchandiseService.Controllers
@@ -7,14 +9,14 @@ namespace MerchandiseService.Controllers
     [Produces("application/json")]
     public class MerchendiseController : ControllerBase
     {
-        [Route("api/v1/merchandise/request")]
-        public IActionResult FetchRequest()
+        [Route("api/merchandise/demand")]
+        public Task<MerchandiseDemandResponse> SendDemand([FromBody] MerchandiseDemandRequest request)
         {
             throw new NotImplementedException();
         }
 
-        [Route("api/v1/merchandise/info")]
-        public IActionResult GetInfo()
+        [Route("api/merchandise/info")]
+        public Task<MerchandiseInfoResponse> GetInfo([FromBody] MerchandiseInfoRequest request)
         {
             throw new NotImplementedException();
         }
