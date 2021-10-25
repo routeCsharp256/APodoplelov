@@ -3,6 +3,7 @@ using MerchandiseService.Infrastructure.StartupFilters;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace MerchandiseService.Infrastructure.Extensions
 {
@@ -12,7 +13,15 @@ namespace MerchandiseService.Infrastructure.Extensions
         {
             builder.ConfigureServices(services =>
             {
-                services.AddSingleton<IStartupFilter, MiddlewareStartupFilter>();
+                services.AddSingleton<IStartupFilter, MiddlewaresStartupFilter>();
+                services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
+
+                services.AddSwaggerGen(options =>
+                {
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Merchandise Service", Version = "v1" });
+
+                    options.CustomSchemaIds(x => x.FullName);
+                });
 
                 services.AddControllers(options => options.Filters.Add<GlobalExceptionFilter>());
             });

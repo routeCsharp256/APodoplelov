@@ -10,12 +10,14 @@ namespace MerchandiseService.Controllers
     public class MerchendiseController : ControllerBase
     {
         [Route("api/merchandise/demand")]
+        [HttpPost]
         public Task<MerchandiseDemandResponse> SendDemand([FromBody] MerchandiseDemandRequest request)
         {
             throw new NotImplementedException();
         }
 
         [Route("api/merchandise/info")]
+        [HttpPost]
         public Task<MerchandiseInfoResponse> GetInfo([FromBody] MerchandiseInfoRequest request)
         {
             throw new NotImplementedException();

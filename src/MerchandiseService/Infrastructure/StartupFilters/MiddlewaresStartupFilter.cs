@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace MerchandiseService.Infrastructure.StartupFilters
 {
-    public sealed class MiddlewareStartupFilter : IStartupFilter
+    public sealed class MiddlewaresStartupFilter : IStartupFilter
     {
         public Action<IApplicationBuilder> Configure(Action<IApplicationBuilder> next)
         {
