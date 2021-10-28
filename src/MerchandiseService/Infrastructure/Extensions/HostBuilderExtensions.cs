@@ -1,4 +1,5 @@
 ﻿using MerchandiseService.Infrastructure.Filters;
+using MerchandiseService.Infrastructure.Interceptors;
 using MerchandiseService.Infrastructure.StartupFilters;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,8 @@ namespace MerchandiseService.Infrastructure.Extensions
                 });
 
                 services.AddControllers(options => options.Filters.Add<GlobalExceptionFilter>());
+
+                services.AddGrpc(options => options.Interceptors.Add<LoggingInterceptor>());
             });
 
             return builder;

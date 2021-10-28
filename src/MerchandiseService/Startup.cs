@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using MerchandiseService.GrpcServices;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,8 @@ namespace MerchandiseService
 
             app.UseEndpoints(endpoints =>
                 {
+                    endpoints.MapGrpcService<MerchandiseGrpcService>();
+
                     endpoints.MapControllers();
 
                     endpoints.Map("{any}", async context =>
