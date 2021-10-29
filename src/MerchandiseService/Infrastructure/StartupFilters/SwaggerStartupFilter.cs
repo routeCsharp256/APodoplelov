@@ -11,7 +11,13 @@ namespace MerchandiseService.Infrastructure.StartupFilters
             return app =>
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(
+                    config =>
+                    {
+                        config.SwaggerEndpoint("/swagger/v1/swagger.json", "Merchandise API");
+                        config.RoutePrefix = string.Empty;
+                    }
+                );
 
                 next(app);
             };
