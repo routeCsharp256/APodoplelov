@@ -7,7 +7,7 @@ using Microsoft.Extensions.Primitives;
 
 namespace MerchandiseService.Infrastructure.Middlewares
 {
-    public class LogResponseMiddleware
+    public sealed class LogResponseMiddleware
     {
         private readonly RequestDelegate NextDelegate;
         private readonly ILogger<LogResponseMiddleware> Logger;

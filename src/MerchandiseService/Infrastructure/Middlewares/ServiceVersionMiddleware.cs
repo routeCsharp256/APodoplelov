@@ -6,24 +6,26 @@ namespace MerchandiseService.Infrastructure.Middlewares
 {
     public sealed class ServiceVersionMiddleware
     {
-        // ReSharper disable once UnusedParameter.Local
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "<Pending>")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
         public ServiceVersionMiddleware(RequestDelegate next)
         {
         }
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         public async Task InvokeAsync(HttpContext context)
         {
             var service = System.Reflection.Assembly.GetExecutingAssembly().GetName();
             var version = service.Version?.ToString() ?? "version not found";
             var serviceName = service.Name;
             var responseJson = JsonSerializer.Serialize(new
-                {
-                    version,
-                    serviceName,
-                }
+            {
+                version,
+                serviceName,
+            }
             );
 
-            await context.Response.WriteAsync(responseJson);
+            _ = context.Response.WriteAsync(responseJson).ConfigureAwait(false);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace MerchandiseService.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    public class MerchendiseController : ControllerBase
+    public sealed class MerchendiseController : ControllerBase
     {
         [Route("api/merchandise/demand")]
         [HttpPost]
