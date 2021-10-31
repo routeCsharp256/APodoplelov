@@ -25,8 +25,11 @@ namespace MerchandiseService.Infrastructure.Interceptors
 
             var response = base.UnaryServerHandler(request, context, continuation);
 
-            var responseJson = JsonSerializer.Serialize(response);
-            this._Logger.LogInformation(responseJson);
+            if (null == response.Exception)
+            {
+                var responseJson = JsonSerializer.Serialize(response);
+                this._Logger.LogInformation(responseJson);
+            }
 
             return response;
         }

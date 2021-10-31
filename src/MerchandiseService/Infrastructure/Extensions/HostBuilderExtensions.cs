@@ -26,7 +26,13 @@ namespace MerchandiseService.Infrastructure.Extensions
 
                 services.AddControllers(options => options.Filters.Add<GlobalExceptionFilter>());
 
-                services.AddGrpc(options => options.Interceptors.Add<LoggingInterceptor>());
+                services.AddGrpc(options =>
+                {
+                    options.Interceptors.Add<ExceptionInterceptor>();
+                    options.Interceptors.Add<LoggingInterceptor>();
+                });
+
+                services.AddGrpcReflection();
             });
 
             return builder;

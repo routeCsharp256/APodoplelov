@@ -28,6 +28,8 @@ namespace MerchandiseService
                 {
                     endpoints.MapGrpcService<MerchandiseGrpcService>();
 
+                    endpoints.MapGrpcReflectionService();
+
                     endpoints.MapControllers();
 
                     endpoints.Map("{any}", async context =>
