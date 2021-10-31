@@ -5,4 +5,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+      <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.40.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\MerchandiseService.Grpc\MerchandiseService.Grpc.csproj" />
+        <ProjectReference Include="..\MerchandiseService.RestModels\MerchandiseService.RestModels.csproj" />
+    </ItemGroup>
+
 </Project>
