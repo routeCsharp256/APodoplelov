@@ -10,16 +10,19 @@ namespace MerchandiseService.Domain.AggregationModels.DeliveryAggregate
         public DateTime Date { get; }
         public EmploeeEntity Emploee { get; }
         public MerchPackEntity MerchPack { get; }
+        public DeliveryStatusEnumeration DeliveryStatus { get; }
 
         public DeliveryEntity(int id,
             DateTime date,
             EmploeeEntity emploee,
-            MerchPackEntity merchPack)
+            MerchPackEntity merchPack,
+            DeliveryStatusEnumeration deliveryStatus)
         {
             this.Id = id;
             this.Date = date;
             this.Emploee = emploee;
             this.MerchPack = merchPack;
+            this.DeliveryStatus = deliveryStatus;
         }
     }
 }
