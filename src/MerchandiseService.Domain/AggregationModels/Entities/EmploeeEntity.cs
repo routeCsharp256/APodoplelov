@@ -1,6 +1,6 @@
 ﻿using MerchandiseService.Domain.Models;
 
-namespace MerchandiseService.Domain.AggregationModels.MerchPackAggregate
+namespace MerchandiseService.Domain.AggregationModels.Entities
 {
     public sealed class EmploeeEntity : Entity
     {
