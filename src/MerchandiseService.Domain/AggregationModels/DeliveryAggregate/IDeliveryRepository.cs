@@ -8,8 +8,8 @@ namespace MerchandiseService.Domain.AggregationModels.DeliveryAggregate
 {
     public interface IDeliveryRepository : IRepository<DeliveryEntity>
     {
-        Task<DeliveryEntity> FindByEmploeeAndMerchPackAsync(
-            EmploeeEntity emploee,
+        Task<DeliveryEntity> FindByEmployeeAndMerchPackAsync(
+            EmployeeEntity employee,
             MerchPackEntity merchPack,
             CancellationToken cancellationToken = default
         );

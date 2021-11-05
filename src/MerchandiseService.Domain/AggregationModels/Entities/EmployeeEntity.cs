@@ -2,11 +2,16 @@
 
 namespace MerchandiseService.Domain.AggregationModels.Entities
 {
-    public sealed class EmploeeEntity : Entity
+    public sealed class EmployeeEntity : Entity
     {
         public string Name { get; }
 
-        public EmploeeEntity(int id, string name)
+        public EmployeeEntity(int id)
+        {
+            this.Id = id;
+        }
+
+        public EmployeeEntity(int id, string name)
         {
             this.Id = id;
             this.Name = name;

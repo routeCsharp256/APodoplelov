@@ -18,6 +18,7 @@ namespace MerchandiseService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddInfrastructureServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

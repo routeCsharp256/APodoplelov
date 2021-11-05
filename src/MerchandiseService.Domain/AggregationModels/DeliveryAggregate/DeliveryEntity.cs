@@ -8,19 +8,31 @@ namespace MerchandiseService.Domain.AggregationModels.DeliveryAggregate
     public sealed class DeliveryEntity : Entity
     {
         public DateTime Date { get; }
-        public EmploeeEntity Emploee { get; }
+        public EmployeeEntity Employee { get; }
         public MerchPackEntity MerchPack { get; }
         public DeliveryStatusEnumeration DeliveryStatus { get; }
 
+        public DeliveryEntity(
+            DateTime date,
+            EmployeeEntity employee,
+            MerchPackEntity merchPack,
+            DeliveryStatusEnumeration deliveryStatus)
+        {
+            this.Date = date;
+            this.Employee = employee;
+            this.MerchPack = merchPack;
+            this.DeliveryStatus = deliveryStatus;
+        }
+
         public DeliveryEntity(int id,
             DateTime date,
-            EmploeeEntity emploee,
+            EmployeeEntity employee,
             MerchPackEntity merchPack,
             DeliveryStatusEnumeration deliveryStatus)
         {
             this.Id = id;
             this.Date = date;
-            this.Emploee = emploee;
+            this.Employee = employee;
             this.MerchPack = merchPack;
             this.DeliveryStatus = deliveryStatus;
         }
