@@ -11,6 +11,7 @@ namespace MerchandiseService.HttpClients
     {
         private const string ApiInfoString = "/api/merchandise/info";
         private const string ApiDemandString = "/api/merchandise/demand";
+        private const string ApiNewStockString = "/api/merchandise/new-stock";
 
         private readonly HttpClient _HttpClient;
 
@@ -24,6 +25,9 @@ namespace MerchandiseService.HttpClients
 
         public Task<MerchandiseDemandResponse> SendDemand(MerchandiseDemandRequest request, CancellationToken token)
             => this.PostAsync<MerchandiseDemandRequest, MerchandiseDemandResponse>(request, ApiDemandString, token);
+
+        public Task<NewStockResponse> NewStock(NewStockRequest request, CancellationToken token)
+            => this.PostAsync<NewStockRequest, NewStockResponse>(request, ApiNewStockString, token);
 
         private async Task<T> PostAsync<R, T>(R request, string uri, CancellationToken token)
         {

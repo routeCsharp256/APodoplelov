@@ -9,17 +9,25 @@ namespace MerchandiseService.Domain.AggregationModels.MerchPackAggregate
         public ItemTypeEnumeration ItemType { get; }
         public SkuValueObject Sku { get; }
         public QuantityValueObject Quantity { get; }
+        public QuantityValueObject Available { get; }
+
+        public ItemEntity(int id)
+        {
+            this.Id = id;
+        }
 
         public ItemEntity(int id, string name,
             ItemTypeEnumeration itemType,
             SkuValueObject sku,
-            QuantityValueObject quantity)
+            QuantityValueObject quantity,
+            QuantityValueObject available)
         {
             this.Id = id;
             this.Name = name;
             this.ItemType = itemType;
             this.Sku = sku;
             this.Quantity = quantity;
+            this.Available = available;
         }
     }
 }

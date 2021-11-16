@@ -19,5 +19,12 @@ namespace MerchandiseService.GrpcServices
                 new Status(StatusCode.Cancelled, "not implemented")
             );
         }
+
+        public override Task<NewStocksResponse> NewStocks(NewStocksRequest request, ServerCallContext context)
+        {
+            throw new RpcException(
+                new Status(StatusCode.Cancelled, "not implemented")
+            );
+        }
     }
 }

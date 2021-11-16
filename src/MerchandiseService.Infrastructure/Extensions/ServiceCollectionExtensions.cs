@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MerchandiseService.Infrastructure.Handlers.DeliveryAggregate;
+using MerchandiseService.Infrastructure.Handlers;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -7,8 +7,9 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
+            services.AddMediatR(typeof(CheckDeliveryCommandHandler).Assembly);
             services.AddMediatR(typeof(CreateDeliveryCommandHandler).Assembly);
-            //services.AddMediatR(typeof(UpdateDeliveryCommandHandler).Assembly);
+            services.AddMediatR(typeof(NewStockCommandHandler).Assembly);
 
             return services;
         }

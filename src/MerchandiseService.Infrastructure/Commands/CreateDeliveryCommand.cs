@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace MerchandiseService.Infrastructure.Commands.CreateDelivery
+namespace MerchandiseService.Infrastructure.Commands
 {
     public sealed class CreateDeliveryCommand : IRequest<int>
     {

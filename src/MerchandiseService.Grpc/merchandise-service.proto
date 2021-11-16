@@ -5,6 +5,7 @@ package MerchandiseService;
 service MerchandiseServiceGrpc {
 	rpc SendDemand (MerchandiseDemandRequest) returns (MerchandiseDemandResponse);
     rpc GetInfo (MerchandiseInfoRequest) returns (MerchandiseInfoResponse);
+    rpc NewStocks(NewStocksRequest) returns (NewStocksResponse);
 }
 
 message MerchandiseDemandRequest {
@@ -16,3 +17,9 @@ message MerchandiseInfoRequest {
 }
 message MerchandiseInfoResponse {
 }
+
+message NewStocksRequest {
+}
+message NewStocksResponse {
+}
+    

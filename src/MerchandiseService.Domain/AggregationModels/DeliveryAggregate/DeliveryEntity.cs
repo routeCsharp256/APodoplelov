@@ -1,5 +1,4 @@
 ﻿using System;
-using MerchandiseService.Domain.AggregationModels.Entities;
 using MerchandiseService.Domain.AggregationModels.MerchPackAggregate;
 using MerchandiseService.Domain.Models;
 

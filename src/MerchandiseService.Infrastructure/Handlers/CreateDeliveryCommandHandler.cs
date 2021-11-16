@@ -3,11 +3,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using MerchandiseService.Domain.AggregationModels.DeliveryAggregate;
-using MerchandiseService.Domain.AggregationModels.Entities;
 using MerchandiseService.Domain.AggregationModels.MerchPackAggregate;
-using MerchandiseService.Infrastructure.Commands.CreateDelivery;
+using MerchandiseService.Infrastructure.Commands;
 
-namespace MerchandiseService.Infrastructure.Handlers.DeliveryAggregate
+namespace MerchandiseService.Infrastructure.Handlers
 {
     public sealed class CreateDeliveryCommandHandler : IRequestHandler<CreateDeliveryCommand, int>
     {
