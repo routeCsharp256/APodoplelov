@@ -16,7 +16,7 @@ namespace MerchandiseService.Infrastructure.Interceptors
             {
                 return await continuation(request, context).ConfigureAwait(false);
             }
-            catch (Exception ex) when (!(ex is RpcException))
+            catch (Exception ex) when (ex is not RpcException)
             {
                 throw new RpcException(
                     new Status(StatusCode.Cancelled, ex.Message)
